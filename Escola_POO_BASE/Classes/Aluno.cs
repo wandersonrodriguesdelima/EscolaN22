@@ -9,6 +9,7 @@ namespace Escola_POO_BASE.Classes
     public class Aluno : Usuario
     {
         #region Propriedades
+
         public DateTime DtMatricula { get; set; }
         #endregion
 
