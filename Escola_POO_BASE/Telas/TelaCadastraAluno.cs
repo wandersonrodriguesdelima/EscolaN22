@@ -98,6 +98,7 @@ namespace Escola_POO_BASE.Telas
             DgvUsuarios.ClearSelection();
             BtnCadastrar.Enabled = true;
             BtnAlterar.Enabled = false;
+            CbbBuscar.SelectedIndex = 0;
         }
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
@@ -253,7 +254,17 @@ namespace Escola_POO_BASE.Telas
         //TODO AV PARTE 2 - Click do Botão Reativar
         private void BtnReativar_Click(object sender, EventArgs e)
         {
+          
+        }
 
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            BtnBuscar.PerformClick();
+        }
+
+        private void TelaCadastraAluno_Shown(object sender, EventArgs e)
+        {
+            TxtBuscar.Focus();
         }
     }
 }

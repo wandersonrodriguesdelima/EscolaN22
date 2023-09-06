@@ -42,11 +42,13 @@ namespace Escola_POO_BASE.Telas
             }
 
 
-            LblBoasVindas.Text = $"Bem-Vindo(a), {_userLogado.Nome}!";
+            //LblBoasVindas.Text = $"Bem-Vindo(a), {_userLogado.Nome}!";
             TslNomeUserLogado.Text = _userLogado.Nome;
             TslEmailUserLogado.Text = _userLogado.Email;       
 
             TslDataHora.Text = DateTime.Now.ToLongDateString() + " | " + DateTime.Now.ToLongTimeString();
+            TmrRelogio.Interval= 1000;
+            TmrRelogio.Enabled = true;
 
         }
 
@@ -59,7 +61,13 @@ namespace Escola_POO_BASE.Telas
         private void TsiCadastraAluno_Click(object sender, EventArgs e)
         {
             TelaCadastraAluno tlCadAluno = new TelaCadastraAluno(_userLogado);
-            tlCadAluno.ShowDialog();
+            tlCadAluno.MdiParent = this;
+            tlCadAluno.Show();
+        }
+
+        private void TmrRelogio_Tick(object sender, EventArgs e)
+        {
+            TslDataHora.Text = DateTime.Now.ToLongDateString() + " | " + DateTime.Now.ToLongTimeString();
         }
     }
 }
